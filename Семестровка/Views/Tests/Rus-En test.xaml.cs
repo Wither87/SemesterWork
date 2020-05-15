@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Семестровка.Views.Tests
+{
+    /// <summary>
+    /// Логика взаимодействия для Rus_En_test.xaml
+    /// </summary>
+    public partial class Rus_En_test : UserControl
+    {
+        public Rus_En_test()
+        {
+            InitializeComponent();
+        }
+
+        private void InMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.DataContext = new TestingYourselfView();
+        }
+    }
+}

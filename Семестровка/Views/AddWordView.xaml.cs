@@ -45,7 +45,7 @@ namespace Семестровка.Views
             rusWordInput = CheckInputWord(rusTB);
             if(enWordInput && rusWordInput) {
                 using (StreamWriter sw = new StreamWriter(filePath, true)) {
-                    string str = $"{enTB.Text}:{rusTB.Text};";
+                    string str = $"{enTB.Text.ToLower()}:{rusTB.Text.ToLower()};";
                     sw.WriteLine(str);
                 }
                 enTB.Text = "";

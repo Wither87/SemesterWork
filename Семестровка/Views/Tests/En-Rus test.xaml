@@ -48,14 +48,14 @@
                          Background="#808080"
                          CornerRadius="100"
                          Margin="75,0">
-                    <TextBlock Text="3/15"/>
+                    <TextBlock Text="{Binding Counter}"/>
                 </Border>
 
                 <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" 
                         Background="#808080"
                         CornerRadius="20"
                         Margin="0,5,0,5">
-                    <TextBlock Text="Tree"/>
+                    <TextBlock Text="{Binding EnWord}"/>
                 </Border>
 
                 <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
@@ -65,7 +65,8 @@
                     <TextBox FontFamily="Comic Sans MS"
                              FontSize="30"
                              Style="{StaticResource BaseTextBoxStyle}"
-                             Margin="20"/>
+                             Margin="20"
+                             x:Name="inputWordTB"/>
                 </Border>
 
                 <Border Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
@@ -75,7 +76,8 @@
                             FontFamily="Comic Sans MS"
                             FontSize="30"
                             Style="{StaticResource BaseButtonStyle}"
-                            Content="Далее"/>
+                            Content="Далее"
+                            Click="ContinueButton_Click"/>
                 </Border>
 
             </Grid>

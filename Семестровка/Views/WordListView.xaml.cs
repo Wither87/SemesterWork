@@ -24,17 +24,19 @@ namespace Семестровка.Views
 
         public WordListView() {
             InitializeComponent();
-            AddWordsInListBox();
+            AddWordsInListView();
         }
 
-        void AddWordsInListBox()  {
-            string[] splitFile = null;
-            using(StreamReader sr = new StreamReader(filePath)) {
+        void AddWordsInListView()  {
+            string[] wordsList = null;
+            using (StreamReader sr = new StreamReader(filePath)) {
                 string readedFile = sr.ReadToEnd();
-                splitFile = readedFile.Split(";\r\n", StringSplitOptions.RemoveEmptyEntries);
+                wordsList = readedFile.Split(";\r\n", StringSplitOptions.RemoveEmptyEntries);
             }
-            if (splitFile != null)
-                foreach (var item in splitFile) {
+            //string[] wordsList = File.ReadAllText(filePath).Split(";\r\n", StringSplitOptions.RemoveEmptyEntries);
+
+            if (wordsList != null)
+                foreach (var item in wordsList) {
                     var word = item.Split(":");
                     listView.Items.Add(word);
                 }

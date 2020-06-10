@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Семестровка.Views.TestResultView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Семестровка.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="640"
+             Loaded="TestResultView_Loaded">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource DarkGrayBrush}">
+        <Border Background="{StaticResource LightGrayBrush}"
+                    CornerRadius="60"
+                    Margin="20">
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0"
+                            x:Name="firstSP"/>
+                <StackPanel Grid.Column="1"
+                            x:Name="secondSP"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="Семестровка.Views.Tests.En_Rus_test"
+﻿<UserControl x:Class="Семестровка.Views.Tests.TestView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Семестровка.Views.Tests"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="640">
+             d:DesignHeight="600" d:DesignWidth="640"
+             Loaded="TestView_Loaded">
     <UserControl.Resources>
         <!-- TextBlock Style -->
         <Style TargetType="TextBlock">
@@ -55,7 +56,7 @@
                         Background="#808080"
                         CornerRadius="20"
                         Margin="0,5,0,5">
-                    <TextBlock Text="{Binding EnWord}"/>
+                    <TextBlock Text="{Binding QuestionWord}"/>
                 </Border>
 
                 <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"

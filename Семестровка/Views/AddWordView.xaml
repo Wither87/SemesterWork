@@ -46,7 +46,7 @@
                            Text="Слово на русском:" Height="26" Width="159"/>
                 <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
                          Style="{StaticResource BaseTextBoxStyle}"
-                         x:Name="rusTB"/>
+                         x:Name="ruTB"/>
 
                 <Button Grid.Row="5" Grid.Column="1"
                         Margin="10,10,10,4"

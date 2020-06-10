@@ -6,13 +6,11 @@
         xmlns:local="clr-namespace:Семестровка"
         xmlns:views="clr-namespace:Семестровка.Views"
         xmlns:tests="clr-namespace:Семестровка.Views.Tests"
-        xmlns:viewModels="clr-namespace:Семестровка.ViewModels"
         mc:Ignorable="d"
         Title="English Helper"
         Height="600"
         Width="800"
-        x:Name="wind">
-    
+        x:Name="wind" Loaded="wind_Loaded">
     <Window.Resources>
         <Style TargetType="ListBoxItem" x:Key="BaseButton">
             <Setter Property="Background" Value="{StaticResource RedBrush}"/>
@@ -50,22 +48,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <DataTemplate x:Name="addWordViewTemplate" DataType="{x:Type viewModels:AddWordViewModel}">
-            <views:AddWordView DataContext="{Binding}"/>
-        </DataTemplate>
-        <DataTemplate x:Name="testingYourselfViewTemplate" DataType="{x:Type viewModels:TestingYourselfViewModel}">
-            <views:TestingYourselfView DataContext="{Binding}"/>
-        </DataTemplate>
-        <DataTemplate x:Name="wordListTemplate" DataType="{x:Type viewModels:WordListViewModel}">
-            <views:WordListView DataContext="{Binding}"/>
-        </DataTemplate>
-        <DataTemplate x:Name="RusEnTestTemplate" DataType="{x:Type viewModels:Rus_En_test_ViewModel}">
-            <tests:Rus_En_test DataContext="{Binding}"/>
-        </DataTemplate>
-        <DataTemplate x:Name="EnRusTestTemplate" DataType="{x:Type viewModels:En_Rus_test_ViewModel}">
-            <tests:En_Rus_test DataContext="{Binding}"/>
-        </DataTemplate>
     </Window.Resources>
     
     <Grid Background="{StaticResource DarkGrayBrush}">
@@ -102,6 +84,11 @@
                     Content="Список слов"
                     Style="{StaticResource BaseButton}"
                     Selected="WordList_Selected"
+                    />
+                <ListBoxItem
+                    Content="Результат теста"
+                    Style="{StaticResource BaseButton}"
+                    Selected="ResultTest_Selecred"
                     />
             </ListBox>
         </Grid>

@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Семестровка.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="640">
+             d:DesignHeight="600" d:DesignWidth="640" 
+             Loaded="WordListView_Loaded">
     <UserControl.Resources>
         <!-- TextBlock Style -->
         <Style x:Key="StyleTBlock" TargetType="TextBlock">
@@ -39,23 +40,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
-        
-        <!--
-
-        <TextBlock Grid.Row="0" Grid.Column="1"
-                   Text="Английские слова"
-                   Style="{StaticResource StyleTBlock}"/>
-        <TextBlock Grid.Row="0" Grid.Column="2"
-                   Text="Русские слова"
-                   Style="{StaticResource StyleTBlock}"/>
-
-        <ListBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
-                 Style="{StaticResource StyleLB}"
-                 x:Name="enLB"/>
-        <ListBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"
-                 Style="{StaticResource StyleLB}"
-                 x:Name="rusLB"/>
-        -->
 
         <ListView Grid.Row="1"
                   Grid.Column="1"

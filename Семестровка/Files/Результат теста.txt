@@ -1,0 +1,15 @@
+а:f:True;
+н:y:True;
+к:r:True;
+у:e:True;
+ц:w:True;
+щ:o:True;
+у:e:True;
+щ:o:True;
+ц:w:True;
+р:b:False;
+г:xcb:False;
+ф:xc:False;
+ф:cxb:False;
+й:b:False;
+у:e:False;

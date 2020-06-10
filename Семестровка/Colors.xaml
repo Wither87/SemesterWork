@@ -11,6 +11,9 @@
     <SolidColorBrush x:Key="LightGrayBrush" Color="#333"/>
     <Color x:Key="LightGrayColor">#333</Color>
 
+    <SolidColorBrush x:Key="BlockedGrayBrush" Color="#d3d3d3"/>
+    <Color x:Key="BlockedGrayColor">#d3d3d3</Color>
+
 
     <SolidColorBrush x:Key="WhiteBrush" Color="#fffff1"/>
     <Color x:Key="WhiteColor">#fffff1</Color>

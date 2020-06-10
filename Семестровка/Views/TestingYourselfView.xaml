@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Семестровка.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="640">
+             d:DesignHeight="600" d:DesignWidth="640" 
+             Loaded="TestingYourselfView_Loaded">
     <UserControl.Resources>
         <Style BasedOn="{StaticResource BaseButtonStyle}" TargetType="Button" x:Key="ThisButtonStyle">
-            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Margin" Value="30"/>
             <Setter Property="FontSize" Value="22"/>
         </Style>
     </UserControl.Resources>
@@ -16,7 +17,9 @@
         <Border Background="{StaticResource LightGrayBrush}"
                 CornerRadius="60"
                 Margin="10">
-            <Grid>
+            <Grid x:Name="selectGrid">
+                
+                <!--
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
@@ -27,21 +30,30 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                
-                <Button Grid.Row="0" Grid.Column="0"
+                -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"
                         Content="Англо-русский"
                         Style="{StaticResource ThisButtonStyle}"
                         Click="En_Rus_TestCkick"/>
-                <Button Grid.Row="0" Grid.Column="1"
+                <Button Grid.Row="1"
                         Content="Русско-английский"
                         Style="{StaticResource ThisButtonStyle}"
                         Click="Rus_En_TestClick"/>
+                <!-- 
                 <Button Grid.Row="1" Grid.Column="0"
                         Style="{StaticResource ThisButtonStyle}"
                         Content="Англо-русский&#10;варианты ответа"/>
                 <Button Grid.Row="1" Grid.Column="1"
                         Style="{StaticResource ThisButtonStyle}"
                         Content="Русско-английский&#10; варианты ответа"/>
+                -->
+                
+                <!-- Хотел запилить больше разных тестов, но чот забил -->
             </Grid>
         </Border>
     </Grid>

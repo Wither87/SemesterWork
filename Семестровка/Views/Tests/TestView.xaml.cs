@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using Семестровка.ViewModels;
+using Семестровка.Models;
 
 namespace Семестровка.Views.Tests
 {
@@ -12,6 +13,7 @@ namespace Семестровка.Views.Tests
     public partial class TestView : UserControl, INotifyPropertyChanged
     {
         TestViewModel tvm;
+        TestModel tm;
         private bool language;
 
         private int _counter;
@@ -44,8 +46,8 @@ namespace Семестровка.Views.Tests
         private void ContinueButton_Click(object sender, RoutedEventArgs e) {
             string answerWord = inputWordTB.Text.ToLower();
             tvm.NextQuestion(answerWord);
-            Counter = tvm.Counter;
-            QuestionWord = tvm.QuestionWord;
+            Counter = tm.Counter;
+            QuestionWord = tm.QuestionWord;
             inputWordTB.Text = tvm.TextBoxText;
         }
 
@@ -55,9 +57,10 @@ namespace Семестровка.Views.Tests
         }
 
         private void TestView_Loaded(object sender, RoutedEventArgs e) {
-            tvm = new TestViewModel(language);
-            Counter = tvm.Counter;
-            QuestionWord = tvm.QuestionWord;
+            tm = new TestModel();
+            tvm = new TestViewModel(language, tm);
+            Counter = tm.Counter;
+            QuestionWord = tm.QuestionWord;
         }
     }
 }

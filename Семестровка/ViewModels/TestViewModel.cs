@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Семестровка.Models;
 using Семестровка.Views;
 
 namespace Семестровка.ViewModels
@@ -8,21 +9,25 @@ namespace Семестровка.ViewModels
         private readonly string wordFilePath = @"Files\Слова.txt";
         private readonly string resultTestFilePath = @"Files\Результат теста.txt";
 
+        private TestModel tm;
+
         private bool[] answers;
         private string[] testingWords;
 
         private bool enLanguage; // язык
-        public int Counter { get; set; } // сщётчик
-        public string QuestionWord { get; set; } // вопрос
+        //public int Counter { get; set; } // сщётчик
+        private int counter; // сщётчик
+        //public string QuestionWord { get; set; } // вопрос
+        private string questionWord; // вопрос
         public string TextBoxText { get { return ""; } }
 
         private string rightAnswer;
         private void CheckAndWrite(string answerWord) {
             if (answerWord == rightAnswer) // проверка введённого слова
-                answers[Counter - 1] = true;
-            else answers[Counter - 1] = false;
-            new FileWorker().WriteInFile(resultTestFilePath, QuestionWord, answerWord, answers[Counter - 1]); // запись результата в файл
-            if (Counter < 15) {
+                answers[counter - 1] = true;
+            else answers[counter - 1] = false;
+            new FileWorker().WriteInFile(resultTestFilePath, questionWord, answerWord, answers[counter - 1]); // запись результата в файл
+            if (counter < 15) {
                 TestMethod();
             }
             else {
@@ -35,22 +40,24 @@ namespace Семестровка.ViewModels
         /// </summary>
         private void TestMethod() {
             if (testingWords != null) {
-                string[] word = testingWords[Counter].Split(":", StringSplitOptions.RemoveEmptyEntries);
+                string[] word = testingWords[counter].Split(":", StringSplitOptions.RemoveEmptyEntries);
                 if (enLanguage) { // если английский язык
-                    QuestionWord = word[0]; // слово на экране
+                    questionWord = word[0]; // слово на экране
                     rightAnswer = word[1];  // правильный ответ
                 }
                 else { // если русский язык
-                    QuestionWord = word[1];
+                    questionWord = word[1];
                     rightAnswer = word[0];
                 }
-                Counter++; // счётчик
+                counter++; // счётчик
+                tm.Counter = counter;
+                tm.QuestionWord = questionWord;
             }
         }
 
         private void Load_Method() {
             new FileWorker().FileClear(resultTestFilePath);
-            Counter = 0;
+            counter = 0;
             testingWords = ReadWords();
             answers = new bool[15];
             TestMethod();
@@ -88,8 +95,9 @@ namespace Семестровка.ViewModels
             CheckAndWrite(inputWord);
         }
 
-        public TestViewModel(bool language) {
+        public TestViewModel(bool language, TestModel tm) {
             this.enLanguage = language;
+            this.tm = tm;
             Load_Method();
         }
     }
